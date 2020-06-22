@@ -1,2 +1,2 @@
-# django_labjef
-Project for college course
+# Projeto de banco de dados com django
+Projeto direcionado à matéria MAC0350 do IME-USP.
