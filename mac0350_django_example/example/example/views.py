@@ -11,7 +11,9 @@ def index(request):
 
 def query1(request):
     with connection.cursor() as cursor:
-        cursor.execute('SELECT * FROM example_usuario')
+        cursor.execute('SELECT cpf,nome,login,area_de_pesquisa,nascimento\
+                        from usuario, pessoa\
+                        where id_usuario = id_pessoa')
         result = named_tuple_fetchall(cursor)
     
     template = loader.get_template('example/query1.html')
