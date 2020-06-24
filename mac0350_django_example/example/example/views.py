@@ -16,7 +16,7 @@ def query_usuario(request):
                         from usuario, pessoa where id_usuario = id_pessoa')
         result = named_tuple_fetchall(cursor)
     
-    template = loader.get_template('example/query1.html')
+    template = loader.get_template('example/query_usuario.html')
     context = {'usuario_result_list': result,}
     
     return HttpResponse(template.render(context, request))
