@@ -9,15 +9,15 @@ from django.template import loader
 def index(request):
     return HttpResponse("MAC0350/2020: Data Management Example")
 
-def query1(request):
+def query_usuario(request):
     with connection.cursor() as cursor:
-        cursor.execute('SELECT cpf,nome,login,area_de_pesquisa,nascimento\
-                        from usuario, pessoa\
-                        where id_usuario = id_pessoa')
+        cursor.execute('SELECT cpf, nome, login, area_de_pesquisa, nascimento, \
+                               endereco, instituicao \
+                        from usuario, pessoa where id_usuario = id_pessoa')
         result = named_tuple_fetchall(cursor)
     
     template = loader.get_template('example/query1.html')
-    context = {'query1_result_list': result,}
+    context = {'usuario_result_list': result,}
     
     return HttpResponse(template.render(context, request))
 
