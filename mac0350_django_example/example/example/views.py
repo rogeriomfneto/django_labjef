@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-#from .models import Usuario
-#from .models import Perfil
 from django.db import connection
 from collections import namedtuple
 from django.template import loader
